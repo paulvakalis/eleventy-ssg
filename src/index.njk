@@ -1,14 +1,29 @@
 ---
 Title: Home page
 layout: base.njk
+ 
 ---
 
 <div class="container">
     <div class="row">
         <div class="wrapper">
+            <h1>Weather Near You</h1>
+            <p id="city"></p>
+            <p id="temp"></p>
+            <p id="main"></p>
+            <p id="desc"></p>
 
-            <h1>Hello there</h1>
+            {% for article in news[0].articles %}
+                <div class="card">
+                    <a href="{{ article.url }}">
+                        <h2>{{ article.title }}</h2>
+                    </a>
+                    <span>{{ article.source.name }} - <time>{{ article.publish }}</time></span>
+                </div>
+            {% endfor %}
+            
         </div>
     </div>
 </div>
 <script src="/js/app.js"></script>
+<script src="/js/weather.js"></script>

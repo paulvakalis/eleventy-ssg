@@ -1,0 +1,32 @@
+---
+title: Daily Breifing
+layout: base.njk
+pagination:
+  data: news
+  size: 1
+  alias: news
+permalink: /{{ news.country }}/index.html
+---
+
+<div class="container">
+    <h1>Weather near you</h1>
+    <p id="city"></p>
+    <p id="temp"></p>
+    <p id="main"></p>
+    <p id="desc"></p>
+
+    <h1>News in Your Country</h1>
+    <ul>
+        {% for article in news.articles %}
+            <li>
+                <h2>
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                </h2>
+                <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time>
+                </span>
+            </li>
+
+        {% endfor %}
+    </ul>
+</div>
+<script src="/js/app.js"></script>

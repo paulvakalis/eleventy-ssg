@@ -1,13 +1,16 @@
 ---
-Title: About page
+title: About this page for you
 layout: base.njk
 ---
 
 <div class="container">
-    <div class="row">
-        <div class="wrapper">
-
-            <h1>About page</h1>
-        </div>
-    </div>
+  <h1>This page is really for you!</h1>
+  <p>It was made for you using HTML, CSS and JavaScript. And served as a JAMStack site.</p>
 </div>
+
+
+{% for item in news %}
+  <a href="/{{ item.country}}">{{ item.country }}</a>
+{%  endfor %}
+
+

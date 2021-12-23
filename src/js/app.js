@@ -1,1 +1,1 @@
-console.log('index.js')
+console.log('from app.js');
